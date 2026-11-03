@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gears of War - MVC</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         VISTA
+         HTML representa la estructura visual
+         de la página.
+    =========================================== -->
+
+    <header>
+        <h1>GEARS OF WAR</h1>
+        <p>Demostración del patrón Modelo - Vista - Controlador</p>
+    </header>
+
+
+    <main>
+
+        <!-- ==========================================
+             SECCIÓN PRINCIPAL
+        =========================================== -->
+
+        <section id="inicio">
+
+            <h2>Bienvenido a Sera</h2>
+
+            <p>
+                Conoce el universo de Gears of War,
+                sus personajes y cómo funciona el patrón MVC.
+            </p>
+
+
+            <button id="botonInfo">
+                Conocer más
+            </button>
+
+            <p id="informacion"></p>
+
+
+            <!-- TARJETA DE MARCUS -->
+
+            <div id="tarjetaMarcus">
+
+                <h2>Marcus Fenix</h2>
+
+                <p id="textoMarcus">
+                    Doble click para más información
+                </p>
+
+            </div>
+
+
+            <!-- SELECTOR DE PERSONAJES -->
+
+            <div id="selectorPersonaje">
+
+                <h2>Selecciona un personaje</h2>
+
+                <select id="personajes">
+
+                    <option value="">
+                        -- Selecciona --
+                    </option>
+
+                    <option value="marcus">
+                        Marcus Fenix
+                    </option>
+
+                    <option value="dom">
+                        Dom Santiago
+                    </option>
+
+                    <option value="kait">
+                        Kait Diaz
+                    </option>
+
+                    <option value="jd">
+                        JD Fenix
+                    </option>
+
+                </select>
+
+                <p id="descripcionPersonaje"></p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             EXPLICACIÓN DEL MVC
+        =========================================== -->
+
+        <section id="explicacionMVC">
+
+            <h2>¿Cómo funciona el patrón MVC?</h2>
+
+            <p>
+                MVC significa Modelo, Vista y Controlador.
+                Es una forma de organizar un programa
+                separando los datos, la interfaz y las acciones.
+            </p>
+
+
+            <div class="contenedorMVC">
+
+
+                <!-- MODELO -->
+
+                <div class="tarjetaMVC modelo">
+
+                    <h3>📦 MODELO</h3>
+
+                    <p>
+                        El Modelo contiene y organiza los datos
+                        que utiliza la página.
+                    </p>
+
+                    <p>
+                        En este proyecto el Modelo almacena
+                        la información de los personajes de
+                        Gears of War.
+                    </p>
+
+                    <code>
+                        modelo.personajes
+                    </code>
+
+                </div>
+
+
+
+                <!-- VISTA -->
+
+                <div class="tarjetaMVC vista">
+
+                    <h3>🖥️ VISTA</h3>
+
+                    <p>
+                        La Vista es todo lo que el usuario
+                        puede observar en la página.
+                    </p>
+
+                    <p>
+                        Está formada principalmente por
+                        HTML y CSS.
+                    </p>
+
+                    <p>
+                        Aquí se encuentran los títulos,
+                        botones, tarjetas, colores y textos.
+                    </p>
+
+                    <code>
+                        index.html + style.css
+                    </code>
+
+                </div>
+
+
+
+                <!-- CONTROLADOR -->
+
+                <div class="tarjetaMVC controlador">
+
+                    <h3>⚙️ CONTROLADOR</h3>
+
+                    <p>
+                        El Controlador recibe las acciones
+                        realizadas por el usuario.
+                    </p>
+
+                    <p>
+                        Después consulta el Modelo y
+                        actualiza la Vista.
+                    </p>
+
+                    <p>
+                        En este proyecto está programado
+                        principalmente con JavaScript.
+                    </p>
+
+                    <code>
+                        controlador.iniciar()
+                    </code>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 FLUJO MVC
+            =========================================== -->
+
+            <div class="flujoMVC">
+
+                <h2>Flujo de funcionamiento</h2>
+
+                <div class="flujo">
+
+                    <div>
+                        <strong>1</strong>
+                        <p>Usuario</p>
+                    </div>
+
+                    <span>→</span>
+
+                    <div>
+                        <strong>2</strong>
+                        <p>Controlador</p>
+                    </div>
+
+                    <span>→</span>
+
+                    <div>
+                        <strong>3</strong>
+                        <p>Modelo</p>
+                    </div>
+
+                    <span>→</span>
+
+                    <div>
+                        <strong>4</strong>
+                        <p>Vista</p>
+                    </div>
+
+                </div>
+
+                <p>
+                    El usuario realiza una acción.
+                    El Controlador procesa esa acción,
+                    consulta los datos del Modelo y finalmente
+                    actualiza la Vista.
+                </p>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 DEMOSTRACIÓN INTERACTIVA
+            =========================================== -->
+
+            <div id="demostracion">
+
+                <h2>Demostración del MVC</h2>
+
+                <p>
+                    Selecciona un personaje arriba para
+                    observar cómo trabajan Modelo, Vista
+                    y Controlador.
+                </p>
+
+                <div id="pasosMVC">
+
+                    <p id="pasoUsuario">
+                        👤 Usuario: esperando una acción...
+                    </p>
+
+                    <p id="pasoControlador">
+                        ⚙️ Controlador: esperando...
+                    </p>
+
+                    <p id="pasoModelo">
+                        📦 Modelo: esperando...
+                    </p>
+
+                    <p id="pasoVista">
+                        🖥️ Vista: esperando...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 EXPLICACIÓN DE LOS ELEMENTOS
+            =========================================== -->
+
+            <div class="explicacionElementos">
+
+                <h2>¿Qué hace cada elemento?</h2>
+
+
+                <div class="elemento">
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        HTML crea la estructura de la página.
+                        Define títulos, párrafos, botones,
+                        tarjetas y el selector de personajes.
+                    </p>
+
+                </div>
+
+
+                <div class="elemento">
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        CSS se encarga del diseño visual.
+                        Cambia colores, tamaños, espacios,
+                        bordes y efectos.
+                    </p>
+
+                </div>
+
+
+                <div class="elemento">
+
+                    <h3>JavaScript</h3>
+
+                    <p>
+                        JavaScript permite que la página
+                        responda a las acciones del usuario.
+                        En este proyecto también contiene
+                        el Modelo y el Controlador del patrón MVC.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Proyecto académico - Patrón MVC
+        </p>
+
+        <p>
+            Gears of War
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

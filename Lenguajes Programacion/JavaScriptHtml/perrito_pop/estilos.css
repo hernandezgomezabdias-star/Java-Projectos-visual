@@ -1,0 +1,347 @@
+/* =========================
+   ESTILOS GENERALES
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+header {
+    background-color: #f28c28;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+
+header h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+
+/* MENÚ */
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   CONTENIDO PRINCIPAL
+   ========================= */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+section {
+    padding: 50px 0;
+}
+
+
+h2 {
+    color: #e06d16;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   BIENVENIDA
+   ========================= */
+
+.bienvenida {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+
+.bienvenida div {
+    width: 50%;
+}
+
+
+.bienvenida h2 {
+    text-align: left;
+    color: #6b3e26;
+    font-size: 40px;
+}
+
+
+.bienvenida p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+.bienvenida img {
+    width: 45%;
+    border-radius: 15px;
+}
+
+
+/* BOTÓN */
+
+.boton {
+    display: inline-block;
+    background-color: #e06d16;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+.boton:hover {
+    background-color: #bd5410;
+}
+
+
+/* =========================
+   PRODUCTOS
+   ========================= */
+
+.subtitulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.producto {
+    background-color: white;
+    border: 1px solid #f1d8c3;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 4px 10px #ddd;
+}
+
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.producto h3 {
+    color: #6b3e26;
+    margin-bottom: 8px;
+}
+
+
+.producto strong {
+    display: block;
+    color: #e06d16;
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   SERVICIOS
+   ========================= */
+
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.servicio {
+    background-color: #ffe9cc;
+    border: 2px solid #f28c28;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+
+.servicio h3 {
+    color: #6b3e26;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   TABLA
+   ========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 25px;
+}
+
+
+th,
+td {
+    border: 1px solid #d9bda5;
+    padding: 14px;
+    text-align: center;
+}
+
+
+th {
+    background-color: #f28c28;
+    color: white;
+}
+
+
+tr:nth-child(even) {
+    background-color: #fff2e4;
+}
+
+
+/* =========================
+   FORMULARIO
+   ========================= */
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #f1d8c3;
+}
+
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cdb49f;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+}
+
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #f28c28;
+}
+
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+    background-color: #e06d16;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #bd5410;
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+   ========================= */
+
+footer {
+    background-color: #6b3e26;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+
+/* =========================
+   DISEÑO PARA CELULAR
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .bienvenida {
+        flex-direction: column;
+    }
+
+    .bienvenida div {
+        width: 100%;
+    }
+
+    .bienvenida img {
+        width: 80%;
+    }
+
+    .productos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .servicios {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px;
+    }
+
+}

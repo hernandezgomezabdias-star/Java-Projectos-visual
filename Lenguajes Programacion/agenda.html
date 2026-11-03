@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+
+    <script>
+        let contador = 0;
+
+        function adicionafila(event) {
+
+            event.preventDefault();
+
+            let nombre = document.getElementById("nombre_persona").value;
+            let correo = document.getElementById("correo_persona").value;
+            let telefono = document.getElementById("telefono_persona").value;
+            let categoria = document.getElementById("categoria").value;
+
+            if (categoria === "") {
+                alert("Selecciona una categoría");
+                return;
+            }
+
+            contador++;
+
+            let muestra = document.getElementById("muestra");
+
+            muestra.innerHTML += `
+                <tr id="fila${contador}">
+                    <td>${contador}</td>
+                    <td>${nombre}</td>
+                    <td>${correo}</td>
+                    <td>${telefono}</td>
+                    <td>${categoria}</td>
+                    <td>
+                        <button type="button" onclick="eliminarFila('fila${contador}')">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>
+            `;
+
+            document.getElementById("total").textContent = contador;
+
+            document.getElementById("formulario").reset();
+        }
+
+        function eliminarFila(id) {
+
+            let fila = document.getElementById(id);
+
+            fila.remove();
+
+            contador--;
+
+            document.getElementById("total").textContent = contador;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Agenda</h1>
+
+    <form id="formulario" name="formulario">
+
+        <label>Nombre:</label>
+        <input 
+            type="text" 
+            id="nombre_persona" 
+            name="nombre_persona" 
+            placeholder="Ej: Juan Pérez" 
+            required
+        >
+
+        <br><br>
+
+        <label>Correo:</label>
+        <input 
+            type="email" 
+            id="correo_persona"
+            name="correo_persona" 
+            placeholder="Ej: juan@gmail.com" 
+            required
+        >
+
+        <br><br>
+
+        <label>Teléfono:</label>
+        <input 
+            type="text" 
+            id="telefono_persona"
+            name="telefono_persona" 
+            placeholder="Ej: 33136252436" 
+            required
+        >
+
+        <br><br>
+
+        <label>Selecciona la Categoría:</label>
+
+        <select id="categoria" name="categoria" required>
+
+            <option value="">
+                -- Selecciona --
+            </option>
+
+            <option value="Familia">
+                Familia
+            </option>
+
+            <option value="Trabajo">
+                Trabajo
+            </option>
+
+            <option value="Amigos">
+                Amigos
+            </option>
+
+            <option value="Otros">
+                Otros
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <input 
+            type="submit" 
+            value="Guardar" 
+            id="btnguardar"
+            onclick="adicionafila(event)"
+        >
+
+    </form>
+
+    <br>
+
+    <table border="1" style="border-collapse: collapse; width: 80%;">
+
+        <thead>
+
+            <tr>
+                <th>No.</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="muestra">
+
+        </tbody>
+
+        <tfoot>
+
+            <tr>
+                <td colspan="5" style="text-align: center;">
+                    <strong>Total</strong>
+                </td>
+
+                <td style="text-align: center;">
+                    <strong id="total">0</strong>
+                </td>
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+</body>
+
+</html>

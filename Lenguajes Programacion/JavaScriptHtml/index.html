@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autódromo</title>
+
+    <script>
+        function moverCarro() {
+            let car1 = document.getElementById("car1");
+            car1.style.left = '400px';
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <button 
+        style="position: absolute; top: 400px; left: 400px;" width="400px;" 
+        onclick="moverCarro()">
+        Mover Carro
+    </button>
+
+    <img id="car1"
+         src="carro.png"
+         alt="Carro 1"
+         style="width: 400px; position: absolute; left: 0; top: 150px; height: auto;">
+
+    <img src="carro.png"
+         alt="Carro 2"
+         style="width: 400px; position: absolute; left: 0; top: 300px; height: auto;">
+
+    <img src="carro.png"
+         alt="Carro 3"
+         style="width: 400px; position: absolute; left: 0; top: 450px; height: auto;">
+
+    <img src="carro.png"
+         alt="Carro 4"
+         style="width: 400px; position: absolute; left: 0; top: 600px; height: auto;">
+
+</body>
+
+</html>

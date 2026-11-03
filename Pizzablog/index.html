@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PizzaBlog | Recetas de pizza</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- Encabezado y navegación -->
+    <header class="encabezado">
+
+        <h1>PizzaBlog</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="populares.html">Populares</a></li>
+                <li><a href="faciles.html">Fáciles</a></li>
+            </ul>
+
+            <form>
+                <input type="search" placeholder="Buscar recetas..." aria-label="Buscar recetas">
+                <button type="submit">Buscar</button>
+            </form>
+        </nav>
+
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Carrusel de pizzas -->
+        <section class="carrusel">
+
+            <div class="diapositiva">
+
+                <div class="informacion-pizza">
+                    <h2>Pizza Margherita</h2>
+
+                    <p>
+                        Una receta clásica, sencilla y deliciosa
+                        con tomate, mozzarella y albahaca.
+                    </p>
+
+                    <a href="recetas.html#margherita">Ver receta</a>
+                </div>
+
+                <div class="imagen-pizza">
+                    <img src="img/pizza-margherita.jpg"
+                         alt="Pizza Margherita con tomate, mozzarella y albahaca">
+                </div>
+
+            </div>
+
+            <!-- Controles del carrusel -->
+            <button class="anterior" type="button" aria-label="Pizza anterior">
+                &#10094;
+            </button>
+
+            <button class="siguiente" type="button" aria-label="Pizza siguiente">
+                &#10095;
+            </button>
+
+            <div class="indicadores">
+                <button class="indicador activo" type="button"
+        aria-label="Mostrar primera pizza"></button>
+
+<button class="indicador" type="button"
+        aria-label="Mostrar segunda pizza"></button>
+
+<button class="indicador" type="button"
+        aria-label="Mostrar tercera pizza"></button>
+
+<button class="indicador" type="button"
+        aria-label="Mostrar cuarta pizza"></button>
+
+<button class="indicador" type="button"
+        aria-label="Mostrar quinta pizza"></button>
+            </div>
+
+        </section>
+
+        <!-- Sección de últimas recetas -->
+        <section class="ultimas-recetas">
+
+            <div class="titulo-seccion">
+                <h2>Últimas recetas</h2>
+                <a href="recetas.html">Ver todas →</a>
+            </div>
+
+            <div class="contenedor-recetas">
+
+                <!-- Primera receta -->
+                <div class="tarjeta-receta">
+
+                    <img src="img/pizza-margherita.jpg"
+                         alt="Pizza Margherita con tomate y albahaca">
+
+                    <div class="contenido-receta">
+
+                        <h3>Pizza Margherita</h3>
+
+                        <p>
+                            Una receta clásica con tomate,
+                            mozzarella y albahaca.
+                        </p>
+                        <a href="recetas.html#margherita" class="boton-receta">Ver receta</a>
+
+                        <div class="detalles-receta">
+                            <span>40 min</span>
+                            <span>Fácil</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Segunda receta -->
+                <div class="tarjeta-receta">
+
+                    <img src="img/pizza-pepperoni.jpg"
+                         alt="Pizza Pepperoni con queso">
+
+                    <div class="contenido-receta">
+
+                        <h3>Pizza Pepperoni</h3>
+
+                        <p>
+                            Una receta clásica con mucho
+                            sabor y queso fundido.
+                        </p>
+                        <a href="recetas.html#pepperoni" class="boton-receta">Ver receta</a>
+
+                        <div class="detalles-receta">
+                            <span>45 min</span>
+                            <span>Intermedia</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Tercera receta -->
+                <div class="tarjeta-receta">
+
+                    <img src="img/pizza-quesos.jpg"
+                         alt="Pizza cubierta con cuatro quesos">
+
+                    <div class="contenido-receta">
+
+                        <h3>Pizza cuatro quesos</h3>
+
+                        <p>
+                            Una receta cremosa y deliciosa
+                            con una mezcla de quesos.
+                        </p>
+                        <a href="recetas.html#quesos" class="boton-receta">Ver receta</a>
+                        <div class="detalles-receta">
+                            <span>45 min</span>
+                            <span>Intermedia</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Cuarta receta -->
+                <div class="tarjeta-receta">
+
+                    <img src="img/pizza-vegetariana.jpg"
+                         alt="Pizza vegetariana con verduras">
+
+                    <div class="contenido-receta">
+
+                        <h3>Pizza vegetariana</h3>
+
+                        <p>
+                            Una opción deliciosa con
+                            verduras frescas.
+                        </p>
+                        <a href="recetas.html#vegetariana" class="boton-receta">Ver receta</a>
+                        <div class="detalles-receta">
+                            <span>40 min</span>
+                            <span>Fácil</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Acceso a recetas populares -->
+        <section class="recetas-populares">
+
+            <div class="titulo-seccion">
+                <h2>¿Buscas algo diferente?</h2>
+
+                <p>
+                    Descubre nuestras pizzas favoritas y encuentra
+                    tu próxima receta.
+                </p>
+
+                <a href="populares.html">Explorar recetas populares →</a>
+            </div>
+
+        </section>
+
+        <!-- Acceso a recetas fáciles -->
+        <section class="recetas-faciles">
+
+            <div class="titulo-seccion">
+                <h2>¿Estás empezando?</h2>
+
+                <p>
+                    Prepara pizzas deliciosas con recetas
+                    sencillas y fáciles de seguir.
+                </p>
+
+                <a href="faciles.html">Ver recetas fáciles →</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+
+        <div class="informacion-footer">
+
+            <h2>PizzaBlog</h2>
+
+            <p>
+                Tu lugar para descubrir y preparar
+                deliciosas recetas de pizza.
+            </p>
+
+        </div>
+
+        <div class="enlaces-footer">
+
+            <h3>Explora</h3>
+
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="recetas.html">Todas las recetas</a></li>
+                <li><a href="populares.html">Recetas populares</a></li>
+                <li><a href="faciles.html">Recetas fáciles</a></li>
+            </ul>
+
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 PizzaBlog. Proyecto páginas web UNEDL.</p>
+        </div>
+
+    </footer>
+
+    <script src="funciones.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Programación Visual | UNEDL</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- ESCENA 3D -->
+  <canvas id="scene"></canvas>
+
+
+  <!-- TÍTULO -->
+  <h1 id="headline" class="sr-only">
+    <span>Programación</span>
+    <span>Visual</span>
+  </h1>
+
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+
+    <span class="nav__logo">
+      UNEDL&reg;
+    </span>
+
+    <ul class="nav__links">
+
+      <li>
+        <a href="#work">Work</a>
+      </li>
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- INFORMACIÓN INFERIOR -->
+  <div class="meta">
+
+    <span>
+      Milano &mdash; 2026
+    </span>
+
+    <span>
+      Scroll to explore
+    </span>
+
+  </div>
+
+
+  <!-- =========================
+       INFORMACIÓN
+  ========================== -->
+
+  <section class="info" id="about">
+
+    <div class="info__content">
+
+      <span class="info__label">
+        ¿QUÉ ES?
+      </span>
+
+
+      <h2>
+        Programación Visual
+      </h2>
+
+
+      <p>
+        La programación visual es una forma de desarrollar programas
+        utilizando elementos gráficos e interfaces visuales, además del
+        código tradicional. Permite crear aplicaciones mediante componentes
+        como botones, ventanas, menús, imágenes y formularios.
+      </p>
+
+
+      <p>
+        En herramientas como Java con NetBeans, por ejemplo, es posible
+        diseñar una interfaz de manera visual y posteriormente programar
+        las acciones que ocurren cuando el usuario interactúa con ella.
+      </p>
+
+
+      <!-- EJEMPLOS -->
+
+      <div class="info__examples">
+
+        <div>
+          <strong>01</strong>
+          <span>Botones</span>
+        </div>
+
+        <div>
+          <strong>02</strong>
+          <span>Ventanas</span>
+        </div>
+
+        <div>
+          <strong>03</strong>
+          <span>Menús</span>
+        </div>
+
+        <div>
+          <strong>04</strong>
+          <span>Formularios</span>
+        </div>
+
+      </div>
+
+
+      <!-- RESUMEN -->
+
+      <p class="info__summary">
+
+        <strong>
+          En pocas palabras:
+        </strong>
+
+        la programación visual facilita la creación de aplicaciones
+        mediante interfaces gráficas y componentes visuales, combinándolos
+        con código para controlar su funcionamiento.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- THREE.JS -->
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+
+
+  <!-- SCRIPT -->
+
+  <script type="module" src="./script.js"></script>
+
+</body>
+
+</html>
+```

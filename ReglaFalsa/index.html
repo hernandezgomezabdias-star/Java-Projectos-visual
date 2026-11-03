@@ -1,0 +1,313 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Método de la Regla Falsa</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <!-- ENCABEZADO -->
+        <header class="encabezado">
+            <h1>MÉTODO DE LA REGLA FALSA</h1>
+            <p>Cálculo de raíces de ecuaciones no lineales</p>
+        </header>
+
+        <!-- PANELES SUPERIORES -->
+        <section class="panel-superior">
+
+            <!-- FUNCIÓN -->
+            <article class="panel">
+
+                <div class="panel-titulo">
+                    Función algebraica
+                </div>
+
+                <div class="funcion-contenido">
+
+                    <label for="funcion">
+                        Introduce tu función f(x):
+                    </label>
+
+                    <input
+                        type="text"
+                        id="funcion"
+                        placeholder="Ejemplo: x^3 - 4*x - 9"
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+
+                    <p class="nota">
+                        Usa x para la variable, ^ para potencias y *
+                        para multiplicar.
+                    </p>
+
+                    <div class="ejemplo-funcion">
+                        <strong>Ejemplo:</strong>
+                        x^3 - 4*x - 9
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- PARÁMETROS -->
+            <article class="panel">
+
+                <div class="panel-titulo">
+                    Parámetros de entrada
+                </div>
+
+                <div class="parametros">
+
+                    <label for="valorA">
+                        Límite inferior (a):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="valorA"
+                        placeholder="Ingresa a"
+                        step="any"
+                    >
+
+                    <label for="valorB">
+                        Límite superior (b):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="valorB"
+                        placeholder="Ingresa b"
+                        step="any"
+                    >
+
+                    <label for="tolerancia">
+                        Error permitido (%):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="tolerancia"
+                        placeholder="Ej. 0.05"
+                        min="0"
+                        step="any"
+                    >
+
+                    <label for="decimales">
+                        Número de decimales:
+                    </label>
+
+                    <select id="decimales">
+                        <option value="" selected disabled>
+                            Selecciona
+                        </option>
+
+                        <option value="2">2 decimales</option>
+                        <option value="3">3 decimales</option>
+                        <option value="4">4 decimales</option>
+                        <option value="5">5 decimales</option>
+                        <option value="6">6 decimales</option>
+                        <option value="8">8 decimales</option>
+                        <option value="10">10 decimales</option>
+                    </select>
+
+                </div>
+
+            </article>
+
+            <!-- CONTROLES -->
+            <article class="panel">
+
+                <div class="panel-titulo">
+                    Controles
+                </div>
+
+                <div class="controles">
+
+                    <button
+                        type="button"
+                        id="btnCalcular"
+                        class="boton boton-verde"
+                    >
+                        <span class="icono">▶</span>
+                        Calcular
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnLimpiar"
+                        class="boton boton-azul"
+                    >
+                        <span class="icono">⟳</span>
+                        Limpiar
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnSalir"
+                        class="boton boton-rojo"
+                    >
+                        <span class="icono">↪</span>
+                        Salir
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- RESULTADOS -->
+        <section class="panel-resultados">
+
+            <!-- TABLA DE ITERACIONES -->
+            <article class="panel panel-tabla">
+
+                <div class="panel-titulo">
+                    Tabla de iteraciones
+                </div>
+
+                <div class="tabla-contenedor">
+
+                    <table id="tablaResultados">
+
+                        <thead>
+                            <tr>
+                                <th>Iteración</th>
+                                <th>Xr</th>
+                                <th>f(Xr)</th>
+                                <th>Error relativo (%)</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="cuerpoTabla">
+
+                            <tr class="fila-vacia">
+                                <td colspan="4">
+                                    Introduce los datos para comenzar.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div id="mensajeEstado" class="mensaje-estado">
+                    Listo para calcular.
+                </div>
+
+            </article>
+
+            <!-- INFORMACIÓN -->
+            <aside class="panel panel-informacion">
+
+                <div class="panel-titulo">
+                    Información del método
+                </div>
+
+                <div class="informacion-contenido">
+
+                    <p>
+                        La regla falsa es un método numérico que
+                        permite aproximar raíces de ecuaciones.
+                        Utiliza dos extremos de un intervalo donde
+                        la función tiene signos opuestos.
+                    </p>
+
+                    <p>
+                        En cada iteración se calcula una nueva
+                        aproximación y se actualiza el intervalo
+                        hasta alcanzar el error permitido.
+                    </p>
+
+                </div>
+
+                <div class="panel-titulo titulo-formula">
+                    Fórmula utilizada
+                </div>
+
+                <div class="formula-contenido">
+
+                    <div class="formula">
+
+                        <span>
+                            x<sub>r</sub> =
+                        </span>
+
+                        <span class="fraccion">
+
+                            <span class="numerador">
+                                af(b) − bf(a)
+                            </span>
+
+                            <span class="denominador">
+                                f(b) − f(a)
+                            </span>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+        <!-- RESULTADO FINAL -->
+        <section class="panel panel-final">
+
+            <div class="panel-titulo">
+                Resultado final
+            </div>
+
+            <div class="resultado-contenido">
+
+                <div class="objetivo">
+                    🎯
+                </div>
+
+                <label for="resultadoRaiz">
+                    Raíz aproximada:
+                </label>
+
+                <output
+                    id="resultadoRaiz"
+                    class="resultado-valor"
+                >----</output>
+
+                <label for="resultadoError">
+                    Error relativo (%):
+                </label>
+
+                <output
+                    id="resultadoError"
+                    class="resultado-valor"
+                >----</output>
+
+            </div>
+
+        </section>
+
+        <footer class="pie">
+            Método de la Regla Falsa | Métodos Numéricos
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
+```

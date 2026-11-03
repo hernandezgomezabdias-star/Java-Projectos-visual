@@ -1,0 +1,67 @@
+```css
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #222;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.pelicula {
+    width: 450px;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px black;
+}
+
+h1 {
+    color: #d62828;
+}
+
+.subtitulo {
+    color: #666;
+}
+
+button {
+    margin-top: 15px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #d62828;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a71919;
+}
+
+#informacion {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background-color: #eeeeee;
+
+    border-radius: 10px;
+}
+```

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información sobre JavaScript</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4c0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #122f6078;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tarjeta {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #122f60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1c478d;
+        }
+
+        #informacionExtra {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript</h1>
+
+        <p>
+            Lenguaje de programación para páginas web
+        </p>
+    </header>
+
+    <main>
+
+        <section class="tarjeta">
+
+            <h2>¿Qué es JavaScript?</h2>
+
+            <p>
+                JavaScript es un lenguaje de programación utilizado
+                principalmente en el desarrollo web.
+            </p>
+
+            <p>
+                Permite crear páginas web interactivas y dinámicas,
+                haciendo que los elementos de una página puedan
+                responder a las acciones del usuario.
+            </p>
+
+            <p>
+                JavaScript es un lenguaje de programación que se utiliza
+                principalmente en el desarrollo web para crear experiencias
+                interactivas en las páginas web.
+            </p>
+
+            <button onclick="mostrarInformacion()">
+                Mostrar Información
+            </button>
+
+            <div id="informacionExtra">
+
+                <h3>Dato Interesante</h3>
+
+                <p>
+                    JavaScript fue creado por Brendan Eich en 1995 y se ha
+                    convertido en uno de los lenguajes de programación más
+                    populares del mundo.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2023 Información sobre JavaScript.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+    <script>
+
+        function mostrarInformacion() {
+
+            const infoDiv = document.getElementById("informacionExtra");
+
+            if (infoDiv.style.display === "none" || infoDiv.style.display === "") {
+
+                infoDiv.style.display = "block";
+
+            } else {
+
+                infoDiv.style.display = "none";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

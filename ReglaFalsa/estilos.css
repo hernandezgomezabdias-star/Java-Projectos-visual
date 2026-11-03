@@ -1,0 +1,506 @@
+```css
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 18px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #172337;
+    background: linear-gradient(135deg, #e8f1fc, #f8fbff);
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+    padding: 22px 15px;
+    margin-bottom: 14px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(120deg, #204d7e, #285d91);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(20, 55, 90, 0.15);
+}
+
+.encabezado h1 {
+    margin: 0 0 5px;
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.encabezado p {
+    margin: 0;
+    font-size: clamp(14px, 1.6vw, 22px);
+}
+
+/* =========================================
+   DISTRIBUCIÓN DE PANELES
+========================================= */
+
+.panel-superior {
+    display: grid;
+    grid-template-columns: 1.1fr 1.1fr 0.7fr;
+    gap: 14px;
+    margin-bottom: 14px;
+    align-items: stretch;
+}
+
+.panel-resultados {
+    display: grid;
+    grid-template-columns: minmax(0, 2.5fr) minmax(280px, 0.9fr);
+    gap: 14px;
+    align-items: stretch;
+    margin-bottom: 14px;
+}
+
+/* =========================================
+   PANELES
+========================================= */
+
+.panel {
+    min-width: 0;
+    overflow: hidden;
+    background: white;
+    border: 1px solid #c9dff3;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px rgba(40, 80, 120, 0.05);
+}
+
+.panel-titulo {
+    padding: 11px 16px;
+    color: #103d80;
+    background: linear-gradient(100deg, #d5eaff, #c5e0f7);
+    font-size: 18px;
+    font-weight: 750;
+}
+
+/* =========================================
+   FUNCIÓN ALGEBRAICA
+========================================= */
+
+.funcion-contenido {
+    min-height: 230px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.etiqueta-funcion,
+.funcion-contenido label {
+    margin-bottom: 12px;
+    color: #173f70;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#funcion {
+    width: 100%;
+    height: 49px;
+    padding: 12px;
+    font-family: Consolas, monospace;
+    font-size: 17px;
+    background: #f8fbff;
+    border: 1px solid #9aadc3;
+    border-radius: 7px;
+    outline: none;
+}
+
+#funcion:focus {
+    border-color: #2878c8;
+    box-shadow: 0 0 0 3px rgba(40, 120, 200, 0.13);
+}
+
+.nota {
+    margin: 14px 0 8px;
+    color: #687b91;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.ejemplo-funcion {
+    padding: 10px;
+    color: #28547f;
+    background: #edf5ff;
+    border-radius: 6px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   PARÁMETROS
+========================================= */
+
+.parametros {
+    display: grid;
+    grid-template-columns: minmax(125px, 1fr) minmax(100px, 0.8fr);
+    gap: 13px 10px;
+    align-items: center;
+    padding: 18px 15px;
+}
+
+.parametros label {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+input,
+select {
+    width: 100%;
+    min-width: 0;
+    height: 41px;
+    padding: 8px 10px;
+    color: #202b3b;
+    background: white;
+    border: 1px solid #9aadc3;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #2878c8;
+    box-shadow: 0 0 0 3px rgba(40, 120, 200, 0.13);
+}
+
+input::placeholder {
+    color: #9aa8b8;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.controles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+}
+
+.boton {
+    width: 100%;
+    min-height: 57px;
+    padding: 12px 8px;
+    border: none;
+    border-radius: 9px;
+    color: white;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+.boton:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+}
+
+.boton:active {
+    transform: translateY(0);
+}
+
+.boton-verde {
+    background: linear-gradient(120deg, #279b58, #168247);
+}
+
+.boton-azul {
+    background: linear-gradient(120deg, #3887d8, #2870bd);
+}
+
+.boton-rojo {
+    background: linear-gradient(120deg, #ed4545, #d72f35);
+}
+
+.icono {
+    margin-right: 8px;
+    font-size: 19px;
+}
+
+/* =========================================
+   TABLA DE ITERACIONES
+========================================= */
+
+.panel-tabla {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    max-height: 460px;
+    overflow: auto;
+    padding: 8px 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 13px 8px;
+    color: white;
+    background: linear-gradient(120deg, #356ca7, #28609b);
+    font-size: 15px;
+    font-weight: 750;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+thead th:first-child {
+    border-top-left-radius: 6px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 6px;
+    border-right: none;
+}
+
+tbody td {
+    padding: 11px 8px;
+    border-right: 1px solid #d1deec;
+    border-bottom: 1px solid #d1deec;
+    overflow-wrap: anywhere;
+}
+
+tbody td:first-child {
+    border-left: 1px solid #d1deec;
+}
+
+tbody tr:nth-child(odd) {
+    background: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #edf2f8;
+}
+
+tbody tr:hover {
+    background: #dcecff;
+}
+
+.fila-vacia td {
+    height: 65px;
+    color: #7b8ba0;
+    font-style: italic;
+}
+
+.mensaje-estado {
+    padding: 11px 14px;
+    color: #48627f;
+    font-size: 13px;
+    border-top: 1px solid #e0eaf4;
+}
+
+/* =========================================
+   INFORMACIÓN DEL MÉTODO
+========================================= */
+
+.panel-informacion {
+    display: flex;
+    flex-direction: column;
+}
+
+.informacion-contenido {
+    margin: 12px;
+    padding: 15px;
+    background: #edf8e9;
+    border-radius: 9px;
+}
+
+.informacion-contenido p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.informacion-contenido p:last-child {
+    margin-bottom: 0;
+}
+
+.titulo-formula {
+    margin-top: 5px;
+}
+
+.formula-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 135px;
+    margin: 12px;
+    padding: 12px;
+    background: #fff0f0;
+    border-radius: 9px;
+}
+
+.formula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-style: italic;
+}
+
+.fraccion {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+}
+
+.numerador {
+    padding: 6px 4px;
+    border-bottom: 1px solid #333;
+}
+
+.denominador {
+    padding: 6px 4px;
+}
+
+/* =========================================
+   RESULTADO FINAL
+========================================= */
+
+.panel-final {
+    margin-bottom: 12px;
+}
+
+.resultado-contenido {
+    display: grid;
+    grid-template-columns: auto auto minmax(100px, 1fr) auto minmax(100px, 0.8fr);
+    gap: 12px;
+    align-items: center;
+    padding: 16px;
+    background: #f0f9ee;
+}
+
+.objetivo {
+    font-size: 36px;
+    text-align: center;
+}
+
+.resultado-contenido label {
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.resultado-valor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 49px;
+    padding: 10px;
+    color: #17652f;
+    background: #d9efd5;
+    border: 1px solid #c2e3bc;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.pie {
+    padding: 12px;
+    color: #77869a;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .panel-superior {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .panel-superior .panel:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .panel-resultados {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado-contenido {
+        grid-template-columns: auto 1fr;
+    }
+
+    .objetivo {
+        grid-row: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .panel-superior {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-superior .panel:first-child {
+        grid-column: auto;
+    }
+
+    .parametros {
+        grid-template-columns: 1fr;
+    }
+
+    .funcion-matematica {
+        flex-direction: column;
+    }
+
+    .resultado-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .objetivo {
+        grid-row: auto;
+    }
+
+    .formula {
+        font-size: 18px;
+    }
+
+    .tabla-contenedor {
+        max-height: 350px;
+    }
+}
+```
